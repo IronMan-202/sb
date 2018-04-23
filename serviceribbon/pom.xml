@@ -43,6 +43,12 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!--增加断路器依赖,在ribbon使用断路器-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
