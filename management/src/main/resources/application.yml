@@ -8,6 +8,6 @@ spring:
     active: dev
 ---
 server:
-  port: 8762
+  port: 10086
   context-path: /sb
 #  localhost:8762/sb/swagger-ui.html
