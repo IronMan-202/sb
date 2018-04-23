@@ -17,3 +17,13 @@ com.pengda.config:
     3, 一个Ribbon(ServiceRibbon),端口8764，注册到注册中心
     4，当ServiceRibbon通过RestTemplate向SERIVCE-HI调用时，
         因为Ribbon进行了负载均衡，会轮流调用SERVICE-HI的两个接口8762,8763
+4.23
+    配置Feign
+        Feign是一个伪客户端，即他不做任何请求处理，Feign通过注解生成request，从而简化Http api 开发的目的
+        1、通过@EnableFeignClients注解，开启FeignClient
+        2、根据Feign规则创建一个接口，并用@FeignClient注解，并指向请求地址
+        3、程序启动后，会进行包扫描，扫描@FeifnClient注解的类，并将这些信息注入的IOC容器中
+        4、当接口的方法被调用的时候，通过JDK代理，来生成具体的RequestTemplate
+        5、RequestTemplate再生成request
+        6、Request交给Client去处理，其中Client可以是HttpUrlConnection、HttpClient也可以是Okhttp
+        7、最后Client被封装到LoadBalanceClient类，这个类结合类Ribbon做到了负载均衡
