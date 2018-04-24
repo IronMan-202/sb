@@ -26,4 +26,5 @@ com.pengda.config:
         4、当接口的方法被调用的时候，通过JDK代理，来生成具体的RequestTemplate
         5、RequestTemplate再生成request
         6、Request交给Client去处理，其中Client可以是HttpUrlConnection、HttpClient也可以是Okhttp
-        7、最后Client被封装到LoadBalanceClient类，这个类结合类Ribbon做到了负载均衡
+        7、最后Client被封装到LoadBalanceClient类，这个类结合类Ribbon做到了负载均衡、
+4.24

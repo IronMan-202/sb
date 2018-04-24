@@ -1,0 +1,32 @@
+server:
+  port: 8769
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: service-ribbon
+    api-b:
+      path: /api-b/**
+      serviceId: service-feign
+
+  host:
+          connect-timeout-millis: 10000
+          socket-timeout-millis: 60000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+#hystrix.command.default.execution.isolation.strategy: SEMAPHORE
+#hystrix.command.default.fallback.isolation.semaphore.maxConcurrentRequests: 200000
+#hystrix.command.default.execution.isolation.semaphore.maxConcurrentRequests: 200000
+#hystrix.command.LocationCircuitBreaker.execution.isolation.semaphore.maxConcurrentRequests: 200000
+#hystrix.command.LocationCircuitBreaker.fallback.isolation.semaphore.maxConcurrentRequests: 200000
+#eureka.default.semaphore.maxSemaphores: 30000
+#hystrix.command.default.execution.isolation.thread.interruptOnTimeout: false
