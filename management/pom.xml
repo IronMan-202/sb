@@ -74,6 +74,17 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.15</version>
         </dependency>
+		<!-- 解决前后端接口交互跨域问题 -->
+		<dependency>
+			<groupId>com.thetransactioncompany</groupId>
+			<artifactId>cors-filter</artifactId>
+			<version>1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.thetransactioncompany</groupId>
+			<artifactId>java-property-utils</artifactId>
+			<version>1.9</version>
+		</dependency>
     </dependencies>
 
 	<build>
