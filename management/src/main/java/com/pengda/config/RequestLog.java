@@ -11,10 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 import java.time.Instant;
 
-//HandlerInterceptoer拦截的是请求地址,所以针对请求地址做一些验证、预处理等操作比较合适，比如需要统计请求这个地址的响应时间
-//Filter是Servlet规范规定的，不属于spring框架，也是用于请求的拦截。但是它适合更粗粒度的拦截，在请求前后做一些编解码处理、日志记录等。
-
-
+/*
+    HandlerInterceptoer拦截的是请求地址,所以针对请求地址做一些验证、预处理等操作比较合适，
+    比如需要统计请求这个地址的响应时间
+*/
+/*  Filter是Servlet规范规定的，不属于spring框架，也是用于请求的拦截。
+    但是它适合更粗粒度的拦截，在请求前后做一些编解码处理、日志记录等。
+*/
 
 public class RequestLog extends HandlerInterceptorAdapter {
     private static final Logger LOGGER = LoggerFactory.getLogger(RequestLog.class);

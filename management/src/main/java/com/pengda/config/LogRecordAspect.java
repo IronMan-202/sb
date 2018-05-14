@@ -14,11 +14,11 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by pengda on 17/12/07.
+ * Created by pd on 17/12/07.
  */
 //描述切面类
 @Aspect     //@Aspect注解就是告诉spring 这是一个aop类,AOP切面
-@Configuration
+@Configuration  //可理解为用spring的时候xml里面的<beans>标签,类中 @Bean可以理解为用Spring的时候xml里面的<bean>标签
 public class LogRecordAspect {
 private static final Logger logger = LoggerFactory.getLogger(LogRecordAspect.class);
 
